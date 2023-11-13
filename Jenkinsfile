@@ -5,7 +5,6 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    // Завантажити код з GitHub (включає файли з гілки main)
                     checkout scm
                 }
             }
@@ -14,10 +13,7 @@ pipeline {
         stage('Build and Deploy') {
             steps {
                 script {
-                    // Завантажити останній образ Docker
                     sh 'docker-compose pull'
-
-                    // Побудувати та запустити контейнери
                     sh 'docker-compose up --build -d'
 
                 
@@ -26,7 +22,7 @@ pipeline {
         }
         stage('Run tests against the container') {
             steps {
-                sh 'curl http://172.18.0.0:8081
+                sh 'curl http://172.18.0.0:8081'
             }
         }
     }
