@@ -24,7 +24,7 @@ pipeline {
                 }
             }
         }
-        stage('Run tests against the container) {
+        stage('Run tests against the container') {
             steps {
                 sh 'curl http://172.18.0.0:8081
             }
@@ -33,7 +33,6 @@ pipeline {
 
     post {
         always {
-            // Кроки очищення або додаткові дії після побудови
             sh 'docker-compose down'
         }
     }
