@@ -13,10 +13,11 @@ pipeline {
         stage('Build and Deploy') {
             steps {
                 script {
-                    sh 'docker-compose pull'
-                    sh 'docker-compose up --build -d'
+                	dir('docker-compose'){
+                    		sh 'docker-compose pull'
+                    		sh 'docker-compose up --build -d'
 
-                
+                	}
                 }
             }
         }
