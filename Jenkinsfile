@@ -27,9 +27,7 @@ pipeline {
             steps {
                 script {
                 	dir('docker-compose'){
-                    		sh 'docker-compose pull'
-                    		sh 'docker-compose up --build -d'
-
+                    		sh 'docker-compose up --build'
                 	}
                 }
             }
