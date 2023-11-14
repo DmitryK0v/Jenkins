@@ -27,6 +27,7 @@ pipeline {
 				sh 'echo MONGO_SERVER=mongo >> .env'
 				sh 'cat .env'
 				sh 'mv .env /var/lib/jenkins/workspace/joba_1/'
+				sh 'git clone https://github.com/MaksymukNatalia/Schedule' 
                     		sh 'docker-compose up --build'
                 	}
                 }
