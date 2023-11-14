@@ -3,32 +3,33 @@ pipeline {
     
     environment {
     	//main db
-	DB_HOST=postgres
-	POSTGRES_DB=schedule
-	POSTGRES_USER=schedule
-	POSTGRES_PASSWORD=pass
+	DB_HOST='postgres'
+	POSTGRES_DB='schedule'
+	POSTGRES_USER=s'chedule'
+	POSTGRES_PASSWORD='pass'
 	
 	//db test
-	TEST_DB_HOST=172.18.0.2
-	TEST_DB_NAME=schedule_test
-	TEST_DB_USERNAME=schedule
-	TEST_DB_PASSWORD=D52PuG70kx(E?}evtAe03wl2b1JbF(R6
+	TEST_DB_HOST='172.18.0.2'
+	TEST_DB_NAME='schedule_test'
+	TEST_DB_USERNAME='schedule'
+	TEST_DB_PASSWORD='D52PuG70kx(E?}evtAe03wl2b1JbF(R6'
+	
 	//jwt
-	JWT_SECRET=jwtsecret
-	JWT_EXPIRED=86400000
+	JWT_SECRET='jwtsecret'
+	JWT_EXPIRED='86400000'
 	
 	//redis
-	REDIS_HOST=redis
+	REDIS_HOST='redis'
 	
 	//mongo db
-	MONGO_DATABASE=schedules
-	MONGO_SERVER=mongo
+	MONGO_DATABASE='schedules'
+	MONGO_SERVER='mongo'
 
-	//LOCAL_URL=http://localhost:3000/
-	//HEROKU_URL=https://softservedemo.herokuapp.com/
-	//BACKEND_URL=https://develop-softserve.herokuapp.com/
-	//MAIL_USERNAME=env.username
-	//MAIL_PASSWORD=env.password
+	//LOCAL_URL='http://localhost:3000/'
+	//HEROKU_URL='https://softservedemo.herokuapp.com/'
+	//BACKEND_URL='https://develop-softserve.herokuapp.com/'
+	//MAIL_USERNAME='env.username'
+	//MAIL_PASSWORD='env.password'
 
 
 	//FACEBOOK_CLIENT_ID=748342852383540
