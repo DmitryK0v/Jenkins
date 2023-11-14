@@ -1,20 +1,5 @@
 pipeline {
     agent any
-    environment {
-    	DB_HOST= 'postgres'
-	POSTGRES_DB= 'schedule'
-	POSTGRES_USER= 'schedule'
-	POSTGRES_PASSWORD= 'pass'
-	TEST_DB_HOST= '172.18.0.2'
-	TEST_DB_NAME= 'schedule_test'
-	TEST_DB_USERNAME= 'schedule'
-	TEST_DB_PASSWORD= 'D52PuG70kx(E?evtAe03wl2b1JbF(R6'
-	JWT_SECRET= 'jwtsecret'
-	JWT_EXPIRED= '86400000'
-	REDIS_HOST= 'redis'
-	MONGO_DATABASE= 'schedules'
-	MONGO_SERVER= 'mongo'
-    }
     stages {
         stage('Checkout') {
             steps {
@@ -27,6 +12,20 @@ pipeline {
             steps {
                 script {
                 	dir('docker-compose'){
+                	    	sh 'echo DB_HOST=postgres >> .env'
+				sh 'echo POSTGRES_DB=schedule >> .env'
+				sh 'echo POSTGRES_USER=schedule >> .env'
+				sh 'echo POSTGRES_PASSWORD=pass >> .env'
+				sh 'echo TEST_DB_HOST=172.18.0.2 >> .env'
+				sh 'echo TEST_DB_NAME=schedule_test >> .env'
+				sh 'echo TEST_DB_USERNAME=schedule >> .env'
+				sh 'echo TEST_DB_PASSWORD=D52PuG70kx(E?evtAe03wl2b1JbF(R6 >> .env'
+				sh 'echo JWT_SECRET=jwtsecret >> .env'
+				sh 'echo JWT_EXPIRED=86400000 >> .env'
+				sh 'echo REDIS_HOST=redis >> .env'
+				sh 'echo MONGO_DATABASE=schedules >> .env'
+				sh 'echo MONGO_SERVER=mongo >> .env'
+				sh 'cat .env'
                     		sh 'docker-compose up --build'
                 	}
                 }
